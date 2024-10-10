@@ -22,8 +22,7 @@ jobs:
                 with:
                     log-file-suffix: ${{ matrix.os }}.txt
                     cuda: '12.6.2'
-                    method: 'network'
-                    sub-packages: '["nvcc", "cublas", "cudart"]'
+                    linux-local-args: '["--toolkit"]'
 
             -   name: Build
                 run: make build
