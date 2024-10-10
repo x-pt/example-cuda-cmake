@@ -21,9 +21,7 @@ jobs:
                 id: cuda-toolkit
                 with:
                     log-file-suffix: ${{ matrix.os }}.txt
-                    cuda: '12.5.1'
-                    method: 'network'
-                    sub-packages: '["nvcc", "cudart", "cublas"]'
+                    cuda: '12.6.2'
 
             -   name: Build
                 run: make build
