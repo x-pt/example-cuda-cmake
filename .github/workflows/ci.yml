@@ -21,7 +21,7 @@ jobs:
                 id: cuda-toolkit
                 with:
                     log-file-suffix: ${{ matrix.os }}.txt
-                    cuda: '12.3.2'
+                    cuda: '12.6.2'
                     linux-local-args: '["--toolkit"]'
 
             -   name: Build
