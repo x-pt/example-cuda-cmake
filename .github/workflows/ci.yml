@@ -10,7 +10,7 @@ jobs:
     build-and-test:
         strategy:
             matrix:
-                os: [ubuntu-22.04, windows-2022]
+                os: [ubuntu-24.04, windows-2022]
 
         name: ${{ matrix.os }}
         runs-on: ${{ matrix.os }}
@@ -22,7 +22,9 @@ jobs:
                 with:
                     log-file-suffix: ${{ matrix.os }}.txt
                     cuda: '12.6.2'
-                    linux-local-args: '["--toolkit"]'
+                    method: 'network'
+                    sub-packages: '["nvcc", "cudart", "cublas"]'
+                    non-cuda-sub-packages: '["libcudart", "libcublas"]'
 
             -   name: Build
                 run: make build
