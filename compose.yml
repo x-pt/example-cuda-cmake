@@ -1,0 +1,11 @@
+service:
+    example_cuda_cmake:
+        build: .
+        image: example-cuda-cmake
+
+networks:
+    example_cuda_cmake-net:
+        name: example_cuda_cmake-net
+        ipam:
+            config:
+                -   subnet: 172.16.238.0/24
